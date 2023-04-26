@@ -5,11 +5,12 @@ import AppFilter from "../app-filter/app-filter";
 import React from "react";
 import EmployeesList from "../employees-list/employees-list";
 import EmployeesAddForm from "../employees-add-form/employees-add-form";
-function App(){
+
+function App() {
     const data = [
-        {name: 'John C.', salary: 800, increase: false, id: 1},
-        {name: 'Alex M.', salary: 3000, increase: true, id: 2},
-        {name: 'Carl W.', salary: 5000, increase: false, id: 3}
+        {name: 'John C.', salary: 800, id: 1},
+        {name: 'Alex M.', salary: 3000, id: 2},
+        {name: 'Carl W.', salary: 5000, id: 3}
     ];
     return (
         <div className={'app'}>
@@ -23,4 +24,5 @@ function App(){
         </div>
     )
 }
+
 export default App
