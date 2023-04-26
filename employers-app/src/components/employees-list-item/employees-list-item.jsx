@@ -6,29 +6,30 @@ class EmployeesListItem extends Component {
         super(props);
         this.state = {
             increase: false,
-            favorites : false
+            favorites: false
         }
     }
-    onIncrease = () =>{
+
+    onIncrease = () => {
         this.setState(({increase}) => ({
-            increase : !increase
+            increase: !increase
         }))
     }
-    onFavorites = () =>{
+    onFavorites = () => {
         this.setState(({favorites}) => ({
-            favorites : !favorites
+            favorites: !favorites
         }))
     }
 
     render() {
-        const {name, salary} = this.props
-        const {increase,favorites} = this.state
+        const {name, salary, onDelete} = this.props
+        const {increase, favorites} = this.state
 
         let classNames = "list-group-item d-flex justify-content-between"
         if (increase === true) {
             classNames = "list-group-item d-flex justify-content-between increase"
         }
-        if (favorites === true){
+        if (favorites === true) {
             classNames += " like"
         }
         return (
@@ -43,7 +44,9 @@ class EmployeesListItem extends Component {
                     </button>
 
                     <button type="button"
-                            className="btn-trash btn-sm ">
+                            className="btn-trash btn-sm "
+                            onClick={onDelete}
+                    >
                         <i className="fas fa-trash"></i>
                     </button>
                     <i className="fas fa-star"></i>
